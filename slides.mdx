@@ -1,8 +1,22 @@
-import { themes } from "mdx-deck";
+import { themes, Image, Split, SplitRight } from "mdx-deck";
 
 export const theme = themes.future;
 
 # git & Terminal kurs
+
+### Koseprogg
+
+#### 29.09.2021
+
+## [https://aba.wtf/terminalkos](https://aba.wtf/terminalkos)
+
+---
+
+### Prerequisites
+
+- En terminal med `bash` eller `zsh`. Har du mac, linux eller WSL allerede er du all good.
+- For å vite hva du har kan du kjøre denne: `echo $SHELL`
+- Installert `git`
 
 ---
 
@@ -10,4 +24,137 @@ export const theme = themes.future;
 
 ---
 
-## Hva er det og hvorfor trenger man det?
+### Hva skal man egentlig med det?
+
+- Det meste i data og software verden er CLI-first
+  (dvs. laget for terminalen)
+- Man blir skikkelig kjapp og effektiv om man er vant med terminalen
+- Du kommer deg rett og slett ikke unna...
+
+---
+
+### The basics
+
+<Split>
+
+- Terminalen er et "interface" til hele datamaskinen din.
+- Man navigerer seg gjennom mapper og utfører oppgaver med kommander som du skriver inn i et
+  _shell_.
+- I terminalen så "befinner" du deg alltid i en mappe. Når du åpner terminalen er dette `home` mappa di.
+
+<!--<Image src="shell.png" />-->
+
+![](shell.png)
+
+</Split>
+
+---
+
+Er par viktige kommandoer som man bør kunne:
+
+- `cd` : Beveg deg rundt på datamaskinen (change directory)
+- `ls` : List alle mapper og filer der du er nå
+- `mv`, `cp`, `rm` : _Move_, _copy_ og _remove_ mapper og filer.
+- `mkdir` : Lag en ny mappe
+
+---
+
+### Aliaser
+
+- Kan være nyttig for å slippe å skrive lange kommandoer over og over igjen.
+- Lages bare med å skrive `alias kul="echo 'Terminalen er kul!'"`
+- For å holde på disse, kan man skrive kommandoen inn i `.bashrc` eller `.zshrc`
+
+### Funksjoner
+
+- Man kan lage funksjoner som i python
+
+```
+printBold() {
+  echo -e "\e[1m$1"
+}
+```
+
+---
+
+### Programmer
+
+Du kan kjøre de aller fleste programmer i terminalen.
+Spesielt nyttig for programmer uten _GUI_ som `python`.
+
+På denne måten kan du gjøre alt du gjør i VSCode og annet direkte i terminalen.
+
+_Tips! For å avslutte et program trykker du bare på `CTRL-C`_
+
+---
+
+## Tips & triks
+
+- Tab-completion: Trykk TAB når du skriver kommandoer og terminalen vil hjelpe deg mye!
+- Bruk `code .` for å åpne en mappe i VSCode. (se [her](https://code.visualstudio.com/docs/setup/mac) om det ikke funker)
+
+---
+
+# Git
+
+<Split>
+
+- `git` er et "versjonskontroll system". Den holder styr på alt som har blitt gjort i et prosjekt, av
+  hvem og når.
+- Det er standaren for måten man jobber med koding i hele verden.
+- Analogi: Google docs for kode
+
+<Image
+  src="git-docs.png"
+  height="500px"
+  width="250px"
+  style={{ marginLeft: "100px", marginRight: "0px" }}
+/>
+
+</Split>
+
+---
+
+# Viktigste kommandoer
+
+- `git add` Legg til filer du vil _commite_.
+- `git commit` Lag en ny "endring" i historikken.
+
+...og andre:
+
+- `git status` Se status akkurat nå
+- `git diff` Hva har jeg gjor, men ikke "bekreftet" (commitet)
+- `git log` Se hele loggen
+- `git checkout` Bytt til en annen _branch_
+
+---
+
+## Tips & triks
+
+- Sett VSCode til editor: `git config --global core.editor "code --wait"`
+- Bruk `git status` ofte!
+
+---
+
+## GitHub: Et interface til git
+
+<Image src="git1.png" height="500px" width="400px" />
+
+---
+
+- [Lag en bruker om du ikke har det allerede](https://github.com/signup)
+- [Og sett opp kobling mellom git lokalt og github](https://docs.github.com/en/get-started/quickstart/set-up-git)
+
+- GitHub/GitLab er begge nettsider som fungerer som Dropbox eller Google Drive til git.
+- De har også en del andre funksjoner som gjør det lettere å ha oversikt over prosjektene dine.
+
+---
+
+# Ressurser
+
+- Insteller brew (mac)
+
+  `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+- ZSH (alternativ til bash) `apt install zsh && chsh /bin/zsh`. (mac har allerede)
+- Oh-my-zsh (gjør terminalen din superkul!): https://ohmyz.sh/
